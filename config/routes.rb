@@ -7,4 +7,5 @@ Rails.application.routes.draw do
       resources :tea, only: %i[show]
       resources :subscription, only: %i[create, edit]
     end
+  end
 end
