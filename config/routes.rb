@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :customer, only: %i[show] do
-        resources :subscription, only: %i[create, edit]
+        resources :subscribe, only: %i[create, edit], controller: :subscriptions
+        resources :current, only: %i[index], controller: :subscriptions
       end
       resources :tea, only: %i[show]
     end

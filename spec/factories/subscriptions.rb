@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :subscription do
-    title { "MyString" }
+    title { Faker::Name.name_with_middle }
     customer { nil }
   end
 end

@@ -3,6 +3,6 @@ class CustomerSerializer
 
   set_type :customer
   set_id :id
-  attributes :first_name, :last_name, :email, :address 
+  attributes :first_name, :last_name, :email, :address
 
 end
