@@ -31,5 +31,11 @@ Things you may want to cover:
 
 
 Play with in post man
-<h1> Customer Info page </h1>
-![alt text](https://github.com/jwgalvin/tea_addict/blob/main/assets/Customer_page.png?raw=true)
+<h1> Customer Info endpoint & contract </h1>
+![Customer_page](https://user-images.githubusercontent.com/91991440/171723951-5835cc92-8581-4123-a3a5-bdaa31912820.png)
+<h1> Create subscription endpoint & contract </h2>
+![create_subscription](https://user-images.githubusercontent.com/91991440/171723983-7b2fa8ca-1afd-4514-8d42-ef01a4fd9afd.png)
+<h1> Index subscriptions endpoint & contract </h2>
+![subscription_index](https://user-images.githubusercontent.com/91991440/171723972-91d266ca-714b-4de5-8195-83735bb0d00c.png)
+<h1> Edit subscription endpoint & contract </h2>
+![edit_subscriptions](https://user-images.githubusercontent.com/91991440/171723987-16f4751f-ee81-44ad-958c-e353327fb478.png)
