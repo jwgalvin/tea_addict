@@ -1,7 +1,7 @@
 # README
 
 * ## Versions needed 
-  ruby 2.7.2p137, rails 5.2.8
+    ruby 2.7.2p137, rails 5.2.8
 * ### System dependencies 
   #### Production 
     gem 'jsonapi-serializer'
@@ -16,13 +16,12 @@
     gem 'pry'
 * Configuration <br>
     bundle install
-* Database creation
-  rails db:{create, migrate}
-* How to run the test suite
-  bundle exec rspec
-* Services (job queues, cache servers, search engines, etc.)
+* Database creation <br>
+    rails db:{create, migrate}
+* How to run the test suite<br>
+    bundle exec rspec
 
-* Deployment instructions
+* Deployment instructions <br>
     'rails s' to turn on server at localhost:3000/
 
 ## Play with in post man
