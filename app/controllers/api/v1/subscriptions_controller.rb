@@ -9,7 +9,12 @@ class Api::V1::SubscriptionsController < ApplicationController
     render json: SubscriptionSerializer.new(tea_sub)
   end
 
-
+  def update
+    customer = Customer.find(params[:customer_id])
+    tea_sub = SubscriptionTea.find(params[:subscriptiontea_id])
+    tea_sub.subscription.update(status: params[:status])
+    render json: SubscriptionSerializer.new(tea_sub)
+  end
   private
 
   def subscribe_params

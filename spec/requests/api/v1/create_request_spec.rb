@@ -11,8 +11,11 @@ RSpec.describe "creates all the things" do
   it "creates a subscription" do
     params = {customer_id: @bob.id, tea_id: @earl_grey.id, subscription_id: @starter.id }
     headers = {"CONTENT_TYPE" => "application/json", "Accept" => 'application/json' }
+
     post "/api/v1/customer/#{@bob.id}/subscribe", headers: headers, params: params.to_json
+
     data = JSON.parse(response.body, symbolize_names: true)
+
     expect(response.status).to eq(200)
     expect(data[:data]).to have_key(:id)
     expect(data[:data]).to have_key(:type)
