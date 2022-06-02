@@ -9,7 +9,7 @@ RSpec.describe "creates all the things" do
   end
 
   it "creates a subscription" do
-    params = {customer_id: @bob.id, tea_id: @earl_grey.id, subscription_id: @starter.id }
+    params = {customer_id: @bob.id, tea_id: @earl_grey.id, title: "addict", price: "$20.00", status: true, frequency: "1x a week" }
     headers = {"CONTENT_TYPE" => "application/json", "Accept" => 'application/json' }
 
     post "/api/v1/customer/#{@bob.id}/subscribe", headers: headers, params: params.to_json
@@ -22,5 +22,10 @@ RSpec.describe "creates all the things" do
     expect(data[:data]).to have_key(:attributes)
     expect(data[:data][:attributes]).to have_key(:tea)
     expect(data[:data][:attributes]).to have_key(:subscription)
+    #binding.pry
+    expect(data[:data][:attributes][:subscription][:title]).to eq(params[:title])
+    expect(data[:data][:attributes][:subscription][:price]).to eq(params[:price])
+    expect(data[:data][:attributes][:subscription][:status]).to eq(params[:status])
+    expect(data[:data][:attributes][:subscription][:frequency]).to eq(params[:frequency])
   end
 end
