@@ -1,15 +1,12 @@
 class Api::V1::SubscriptionsController < ApplicationController
-  def index
-    customer = Customer.find(params[:customer_id])
-    customer_subs = customer.subscriptions
-    binding.pry
-    render json: SubscriptionSerializer.new(customer_subs)
-  end
 
   def create
-    binding.pry
-    customer = Customer.find_by(params[:customer_id])
-    subscription = customer.Subscription.create(subscribe_params)
+    customer = Customer.find(params[:customer_id])
+    subscribe = Subscription.find(params[:subscription_id])
+    tea_maker = Tea.find(params[:tea_id])
+    tea_sub = SubscriptionTea.create(subscription_id: subscribe.id, tea_id: tea_maker.id)
+
+    render json: SubscriptionSerializer.new(tea_sub)
   end
 
 

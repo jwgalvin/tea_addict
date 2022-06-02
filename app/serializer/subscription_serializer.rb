@@ -3,6 +3,6 @@ class SubscriptionSerializer
 
   set_type :subscription
   set_id :id
-  attributes 
+  attributes :tea, :subscription
 
 end
