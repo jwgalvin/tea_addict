@@ -4,9 +4,8 @@ Rails.application.routes.draw do
       resources :customer, only: %i[show] do
         put 'subscribe', to: 'subscriptions#update'
         resources :subscribe, controller: :subscriptions
-        resources :current, only: %i[index], controller: :subscriptions
       end
-      resources :tea, only: %i[show]
+      resources :tea, only: %i[index, show]
     end
   end
 end

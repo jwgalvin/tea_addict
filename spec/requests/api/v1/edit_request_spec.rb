@@ -12,46 +12,44 @@ RSpec.describe "creates all the things" do
   end
 
   it "Turns subscriptions off" do
-    params = {customer_id: @bob.id, subscriptiontea_id: @subscription_tea_1.id, status: "false"}
+    params = {customer_id: @bob.id, subscription_id: @starter.id, status: false}
     headers = {"CONTENT_TYPE" => "application/json", "Accept" => 'application/json' }
     put "/api/v1/customer/#{@bob.id}/subscribe", headers: headers, params: params.to_json
     data = JSON.parse(response.body, symbolize_names: true)
 
     expect(response.status).to eq(200)
-    expect(data[:data][:attributes]).to have_key(:tea)
-    expect(data[:data][:attributes]).to have_key(:subscription)
-    expect(data[:data][:attributes][:subscription][:status]).to eq(false)
+    expect(data[:data][:attributes][:status]).to eq(false)
   end
 
   it "Turns subscriptions off, then on again" do
-    params = {customer_id: @bob.id, subscriptiontea_id: @subscription_tea_1.id, status: "false"}
+    params = {customer_id: @bob.id, subscription_id: @starter.id, status: "false"}
     headers = {"CONTENT_TYPE" => "application/json", "Accept" => 'application/json' }
     put "/api/v1/customer/#{@bob.id}/subscribe", headers: headers, params: params.to_json
 
     data = JSON.parse(response.body, symbolize_names: true)
     expect(response.status).to eq(200)
 
-    params_2 = {customer_id: @bob.id, subscriptiontea_id: @subscription_tea_1.id, status: "true"}
+    params_2 = {customer_id: @bob.id, subscription_id: @starter.id, status: "true"}
     headers = {"CONTENT_TYPE" => "application/json", "Accept" => 'application/json' }
     put "/api/v1/customer/#{@bob.id}/subscribe", headers: headers, params: params_2.to_json
 
     data_2 = JSON.parse(response.body, symbolize_names: true)
-    expect(data_2[:data][:attributes][:subscription][:status]).to eq(true)
+    expect(data_2[:data][:attributes][:status]).to eq(true)
   end
 
   it "Turns sub_1 off, doesn't effect sub_2" do
-    params = {customer_id: @bob.id, subscriptiontea_id: @subscription_tea_1.id, status: "false"}
+    params = {customer_id: @bob.id, subscription_id: @starter.id, status: "false"}
     headers = {"CONTENT_TYPE" => "application/json", "Accept" => 'application/json' }
     put "/api/v1/customer/#{@bob.id}/subscribe", headers: headers, params: params.to_json
 
     data = JSON.parse(response.body, symbolize_names: true)
     expect(response.status).to eq(200)
 
-    params_2 = {customer_id: @bob.id, subscriptiontea_id: @subscription_tea_2.id, status: "true"}
+    params_2 = {customer_id: @bob.id, subscription_id: @novice_kit.id, status: "true"}
     headers = {"CONTENT_TYPE" => "application/json", "Accept" => 'application/json' }
     put "/api/v1/customer/#{@bob.id}/subscribe", headers: headers, params: params_2.to_json
 
     data_2 = JSON.parse(response.body, symbolize_names: true)
-    expect(data_2[:data][:attributes][:subscription][:status]).to eq(true)
+    expect(data_2[:data][:attributes][:status]).to eq(true)
   end
 end
