@@ -32,4 +32,4 @@ Things you may want to cover:
 
 Play with in post man
 <h1> Customer Info page </h1>
-[Assets](/Assets/Customer_page.png)
+[Assets](/assets/Customer_page.png)
