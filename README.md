@@ -14,7 +14,7 @@
     gem 'faker'
     gem 'rspec-rails'
     gem 'pry'
-* Configuration /n
+* Configuration <br>
     bundle install
 * Database creation
   rails db:{create, migrate}
