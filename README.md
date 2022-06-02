@@ -14,8 +14,8 @@
     gem 'faker'
     gem 'rspec-rails'
     gem 'pry'
-* Configuration
-  bundle install
+* Configuration /n
+    bundle install
 * Database creation
   rails db:{create, migrate}
 * How to run the test suite
