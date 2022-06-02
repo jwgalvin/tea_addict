@@ -28,3 +28,8 @@ Things you may want to cover:
 
 * Deployment instructions
     'rails s' to turn on server at localhost:3000/
+
+
+Play with in post man
+<h1> Customer Info page </h1>
+[Assets](/Assests/Customer_page.png)
