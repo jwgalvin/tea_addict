@@ -1,13 +1,12 @@
 # README
 
-
-
 * ## Versions needed 
   ruby 2.7.2p137, rails 5.2.8
 * ### System dependencies 
   #### Production 
     gem 'jsonapi-serializer'
   #### Development & Test  
+
     gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
     gem 'simplecov'
     gem 'shoulda-matchers'
@@ -26,8 +25,7 @@
 * Deployment instructions
     'rails s' to turn on server at localhost:3000/
 
-
-Play with in post man
+## Play with in post man
 # Customer Info endpoint & contract 
 ![Customer_page](https://user-images.githubusercontent.com/91991440/171723951-5835cc92-8581-4123-a3a5-bdaa31912820.png)
 # Create subscription endpoint & contract 
